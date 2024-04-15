@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, SafeAreaView } from "react-native";
 import React from "react";
 
 const Home = () => {
@@ -7,20 +7,22 @@ const Home = () => {
       <View style={styles.upperBox} />
       <View style={styles.lowerBox} />
       <View style={styles.textContainer}>
-        <Text style={styles.NumberCycle}>56</Text>
-        <Text style={styles.RemainingUse}>Remaining Uses</Text>
+        <Text style={styles.NumberCycle}>1.8 Ah</Text>
+        <Text style={styles.RemainingUse}>Remaining Capacity</Text>
       </View>
       <View style={styles.Boxes}>
         <View style={styles.SOHBox}>
           <View style={styles.TextContainerSOH}>
-            <Text style={styles.SOHText}> State of Health (SOH) </Text>
-            <Text style={styles.SOHPercentage}> 95% </Text>
+            <Text style={styles.SOHText}> Original Capacity </Text>
+            <View style={styles.Line} />
+            <Text style={styles.SOHPercentage}> 2 Ah </Text>
           </View>
         </View>
         <View style={styles.BattStatusBox}>
           <View style={styles.TextContainerBattStat}>
-            <Text style={styles.BattStatText}> Battery Health Status </Text>
-            <Text style={styles.BattStatResult}> Healthy </Text>
+            <Text style={styles.BattStatText}> Remaining Uses </Text>
+            <View style={styles.Line} />
+            <Text style={styles.BattStatResult}> 40 to 50 </Text>
           </View>
         </View>
       </View>
@@ -40,7 +42,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   lowerBox: {
-    backgroundColor: "#DDE1E1",
+    backgroundColor: "#1F9753",
     position: "absolute",
     bottom: 0,
     left: 0,
@@ -51,7 +53,7 @@ const styles = StyleSheet.create({
   },
   textContainer: {
     position: "absolute",
-    top: "15%",
+    top: "10%",
     left: 0,
     right: 0,
     alignItems: "center",
@@ -77,9 +79,11 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     padding: 15,
     width: 300,
-    height: 180,
+    height: 150,
     borderRadius: 20,
     marginBottom: 40,
+    borderColor: "#F2F2F2",
+    borderWidth: 5,
   },
   TextContainerSOH: {
     flex: 1,
@@ -92,11 +96,13 @@ const styles = StyleSheet.create({
     color: "#374353",
     borderBottomColor: "#DDE1E1",
     borderBottomWidth: 3,
+    paddingRight: 60,
+    paddingBottom: 10,
   },
   SOHPercentage: {
-    top: "10%",
-    right: "-25%",
-    fontSize: 60,
+    paddingTop: 5,
+    paddingLeft: 130,
+    fontSize: 55,
     fontFamily: "asap",
     color: "#374353",
   },
@@ -104,8 +110,10 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     padding: 15,
     width: 300,
-    height: 180,
+    height: 150,
     borderRadius: 20,
+    borderColor: "#F2F2F2",
+    borderWidth: 5,
   },
   TextContainerBattStat: {
     flex: 1,
@@ -116,14 +124,19 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontFamily: "asap",
     color: "#374353",
-    borderBottomColor: "#DDE1E1",
-    borderBottomWidth: 3,
+    paddingRight: 75,
+    paddingBottom: 10,
   },
   BattStatResult: {
-    top: "10%",
-    right: "-13%",
+    paddingTop: 5,
+    paddingLeft: 65,
     fontSize: 50,
     fontFamily: "asap",
     color: "#374353",
+  },
+  Line: {
+    width: "95%",
+    height: 3,
+    backgroundColor: "#1F9753",
   },
 });
