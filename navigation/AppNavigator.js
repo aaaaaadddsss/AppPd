@@ -59,7 +59,7 @@ const Tabs = () => {
         ]}
       >
         <Image
-          source={require("../assets/Splash.png")} // Replace "splash.png" with your custom splash screen image
+          source={require("../assets/Splash.png")}
           resizeMode="contain"
           style={styles.splashImage}
         />

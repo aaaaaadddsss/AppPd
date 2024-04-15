@@ -1,14 +1,20 @@
-import { View, Text, StyleSheet, SafeAreaView } from "react-native";
+import { View, Text, StyleSheet, Image } from "react-native";
 import React from "react";
 
 const Home = () => {
   return (
     <View style={styles.container}>
-      <View style={styles.upperBox} />
+      <View style={styles.upperBox}>
+        <Image
+          source={require("../assets/Image.png")}
+          resizeMode="contain"
+          style={styles.HeaderImg}
+        />
+      </View>
       <View style={styles.lowerBox} />
       <View style={styles.textContainer}>
-        <Text style={styles.NumberCycle}>1.8 Ah</Text>
-        <Text style={styles.RemainingUse}>Remaining Capacity</Text>
+        <Text style={styles.NumberCycle}>Remaining Capacity</Text>
+        <Text style={styles.RemainingUse}>1.8 Ah</Text>
       </View>
       <View style={styles.Boxes}>
         <View style={styles.SOHBox}>
@@ -38,7 +44,7 @@ const styles = StyleSheet.create({
     position: "relative",
   },
   upperBox: {
-    backgroundColor: "#FACC43",
+    backgroundColor: "#1F9753",
     flex: 1,
   },
   lowerBox: {
@@ -53,20 +59,28 @@ const styles = StyleSheet.create({
   },
   textContainer: {
     position: "absolute",
-    top: "10%",
+    paddingTop: 80,
     left: 0,
     right: 0,
     alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.5, // Set the opacity of the shadow
+    shadowRadius: 5, // Set the radius of the shadow
+    elevation: 5, // This is for Android shadow
   },
   NumberCycle: {
     color: "white",
     fontFamily: "asap",
-    fontSize: 100,
+    fontSize: 40,
   },
   RemainingUse: {
     color: "white",
     fontFamily: "asap",
-    fontSize: 40,
+    fontSize: 90,
   },
   Boxes: {
     position: "absolute",
@@ -138,5 +152,8 @@ const styles = StyleSheet.create({
     width: "95%",
     height: 3,
     backgroundColor: "#1F9753",
+  },
+  HeaderImg: {
+    opacity: 0.6,
   },
 });
